@@ -20,8 +20,8 @@ public class Block {
     @Column(name = "name")
     private String name;
 
-    @Size(max = 45, message = "Название слишком длинное")
-    @NotNull(message = "Название  не может быть пустым")
+    @Size(max = 45, message = "Рвзмер слишком длинный")
+    @NotNull(message = "Размер  не может быть пустым")
     @Column(name = "size")
     private String size;
 
