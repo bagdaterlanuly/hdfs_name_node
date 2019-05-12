@@ -1,13 +1,10 @@
-package model.MainInfo.model;
+package model.maininfo.model;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
-import model.File.model.File;
-import model.User.model.User;
+import model.file.model.File;
+import model.user.model.User;
 
 import javax.persistence.*;
-import javax.sql.DataSource;
 import javax.validation.constraints.NotNull;
-import javax.ws.rs.DefaultValue;
 import java.util.Date;
 
 @Entity
@@ -26,11 +23,11 @@ public class MainIfo {
     @ManyToOne
     @JoinColumn(name = "file_id", insertable = false, updatable = false)
     private File file;
-    
+
     @NotNull
     @Column(name = "upload_date")
     private Date uploadDate;
-    
+
     @NotNull
     @Column(name = "status")
     private Boolean status;
@@ -39,7 +36,7 @@ public class MainIfo {
         return id;
     }
 
-    
+
     public void setId(Integer id) {
         this.id = id;
     }
@@ -48,7 +45,7 @@ public class MainIfo {
         return user;
     }
 
-    
+
     public void setUser(User user) {
         this.user = user;
     }
@@ -57,7 +54,7 @@ public class MainIfo {
         return file;
     }
 
-    
+
     public void setFile(File file) {
         this.file = file;
     }
@@ -67,7 +64,7 @@ public class MainIfo {
         return uploadDate;
     }
 
-    
+
     public void setUploadDate(@NotNull Date uploadDate) {
         this.uploadDate = uploadDate;
     }
@@ -77,7 +74,7 @@ public class MainIfo {
         return status;
     }
 
-    
+
     public void setStatus(@NotNull Boolean status) {
         this.status = status;
     }

@@ -1,4 +1,4 @@
-package model.User.model;
+package model.user.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -8,7 +8,7 @@ import javax.validation.constraints.Size;
 @Table(name = "user")
 @NamedQueries({
         @NamedQuery(name = "User.findUserByLogin",
-        query = "SELECT u FROM User u WHERE u.login=:login")
+                query = "SELECT u FROM User u WHERE u.login=:login")
 }
 )
 public class User {

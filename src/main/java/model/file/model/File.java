@@ -1,8 +1,7 @@
-package model.File.model;
+package model.file.model;
 
 
-import model.User.model.User;
-import org.hibernate.annotations.ManyToAny;
+import model.user.model.User;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

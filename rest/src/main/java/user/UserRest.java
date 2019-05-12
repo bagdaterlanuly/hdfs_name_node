@@ -5,8 +5,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import common.GlobalMessage;
 import config.ApiConfigurations;
-import model.User.ejb.UserEJB;
-import model.User.model.User;
+import model.user.ejb.UserEJB;
+import model.user.model.User;
 import org.apache.http.HttpStatus;
 
 import javax.ejb.EJB;
@@ -33,7 +33,7 @@ public class UserRest {
     }
 
     @GET
-    @Path("/getFiles")
+    @Path("/auth")
     @Produces(ApiConfigurations.APPLICATION_JSON_WITH_CHARSET_UTF_8)
     public Response authenticateUser(@HeaderParam("Authorization") String authorization) {
 

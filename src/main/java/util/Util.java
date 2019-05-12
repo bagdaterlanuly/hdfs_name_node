@@ -1,3 +1,5 @@
+package util;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,7 +17,7 @@ public class Util {
         }
     }
 
-    public static ArrayList<String> getcluster() {
+    public static ArrayList<String> getNodeAddresses() {
         String[] clusters = cluster.getProperty("data_nodes").replaceAll("'", "").split(",");
         return new ArrayList<String>(Arrays.asList(clusters));
     }
@@ -24,5 +26,12 @@ public class Util {
         return Integer.valueOf(cluster.getProperty("data_node_count"));
     }
 
+    public static String getUserName(){
+        return cluster.getProperty("user");
+    }
+
+    public static String getPassword(){
+        return cluster.getProperty("password");
+    }
 
 }

@@ -1,6 +1,6 @@
-package model.User.ejb;
+package model.user.ejb;
 
-import model.User.model.User;
+import model.user.model.User;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
@@ -28,21 +28,21 @@ public class UserEJB {
         return em.find(User.class, id);
     }
 
-    public User findUserByLogin(String login){
+    public User findUserByLogin(String login) {
         TypedQuery<User> query = em.createNamedQuery("User.findUserByLogin", User.class);
         query.setParameter("login", login);
         return query.getSingleResult();
     }
 
-    public User authenticateUser(String login, String password) throws ValidationException{
+    public User authenticateUser(String login, String password) throws ValidationException {
         User user = null;
 
         user = findUserByLogin(login);
-        if(user == null){
+        if (user == null) {
             throw new ValidationException("login", "Не правильный логин или пароль!");
         }
 
-        if(user.getPassword().equalsIgnoreCase(password)){
+        if (user.getPassword().equalsIgnoreCase(password)) {
             return user;
         }
 

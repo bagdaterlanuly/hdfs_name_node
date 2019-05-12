@@ -1,6 +1,6 @@
-package model.Block.model;
+package model.block.model;
 
-import model.File.model.File;
+import model.file.model.File;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
