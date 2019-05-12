@@ -6,8 +6,14 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "user")
+@NamedQueries({
+        @NamedQuery(name = "User.findUserByLogin",
+        query = "SELECT u FROM User u WHERE u.login=:login")
+}
+)
 public class User {
 
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
